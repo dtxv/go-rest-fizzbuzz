@@ -1,0 +1,64 @@
+basePath: /
+host: localhost:5000
+info:
+  contact:
+    email: a@email.com
+    name: API Support
+    url: http://contact
+  description: This API provides number transformations regarding specific rules
+  license:
+    name: licence name
+    url: http://licence.url
+  termsOfService: http://swagger.io/terms/
+  title: fizzbuzz
+  version: "1.0"
+paths:
+  /fizz-buzz:
+    get:
+      consumes:
+      - text/plain
+      description: Writes all numbers from 1 to limit by replacing all multiples of
+        int1 by str1, all multiples of int2 by str2, and all multiples of int1 and
+        int2 by str1+str2.
+      operationId: fizz-buzz
+      parameters:
+      - description: The first number
+        in: query
+        name: int1
+        type: integer
+      - description: The second number
+        in: query
+        name: int2
+        type: integer
+      - description: The limit number
+        in: query
+        name: limit
+        type: integer
+      - description: The first text
+        in: query
+        name: str1
+        type: string
+      - description: The second text
+        in: query
+        name: str2
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: integer
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Fizz Buzz list
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"

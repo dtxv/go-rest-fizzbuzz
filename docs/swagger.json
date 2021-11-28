@@ -1,0 +1,92 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This API provides number transformations regarding specific rules",
+        "title": "fizzbuzz",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://contact",
+            "email": "a@email.com"
+        },
+        "license": {
+            "name": "licence name",
+            "url": "http://licence.url"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "paths": {
+        "/fizz-buzz": {
+            "get": {
+                "description": "Writes all numbers from 1 to limit by replacing all multiples of int1 by str1, all multiples of int2 by str2, and all multiples of int1 and int2 by str1+str2.",
+                "consumes": [
+                    "text/plain"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Fizz Buzz list",
+                "operationId": "fizz-buzz",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "The first number",
+                        "name": "int1",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "The second number",
+                        "name": "int2",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "The limit number",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The first text",
+                        "name": "str1",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "The second text",
+                        "name": "str2",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "BasicAuth": {
+            "type": "basic"
+        }
+    }
+}
