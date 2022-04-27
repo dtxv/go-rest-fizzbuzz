@@ -13,7 +13,7 @@ docker run -it -p 5000:5000 go-rest-fizzbuzz
 ## Generate swagger documentation
 
 ```bash
-swag init g
+swag init
 ```
 
 
